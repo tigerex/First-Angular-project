@@ -1,0 +1,189 @@
+.container {
+    height: 700px;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .content {
+    width: auto;
+    height: 100%;
+  }
+  
+  .Left_box {
+    height: 500px;
+    width: 566px;
+    display: inline-block;
+    position: relative;
+    padding: 0px 20px 0px 400px;
+    margin: 250px 0px 20px 0px;
+  }
+  
+  .Logo {
+    height: fit-content;
+    width: 350px;
+  }
+  
+  h4 {
+    margin: 0;
+    padding: 0px 0px 20px 35px;
+    font-size: 28px;
+    font-weight: 100;
+    font-family: Arial, sans-serif;
+    position: relative;
+    top: -25px;
+  }
+  
+  .Right_box {
+    height: 310px;
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    top: 180px;
+    padding: 100px 0px 0px 0px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border-style: groove;
+    border-color: rgb(255, 255, 255);
+  }
+  
+  .email {
+    padding-bottom: 10px;
+    position: relative;
+    top: -70px;
+  }
+  
+  #email_field {
+    padding-left: 10px;
+    border-radius: 10px;
+    height: 50px;
+    width: 350px;
+    border-color: rgb(255, 255, 255);
+    border-style: ridge;
+  }
+  
+  .pass {
+    padding-bottom: 10px;
+  }
+  
+  #password_field {
+    padding-left: 10px;
+    position: relative;
+    top: -70px;
+    border-radius: 10px;
+    height: 50px;
+    width: 350px;
+    border-color: rgb(255, 255, 255);
+    border-style: ridge;
+  }
+  
+  .login_button {
+    position: relative;
+    top: -50px;
+  }
+  
+  #login_button {
+    color: white;
+    font-size: larger;
+    font-weight: 650;
+    font-family: sans-serif;
+    border: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 10px;
+    background-color: #1877f2;
+    height: 60px;
+    width: 360px;
+  }
+  
+  .quenmatkhau {
+    position: relative;
+    top: -30px;
+  }
+  
+  #Forgotten {
+    width: 330px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+  }
+  
+  .createnewacc {
+    position: relative;
+    top: -10px;
+  }
+  
+  #createnewacc {
+    color: white;
+    font-size: larger;
+    font-weight: 650;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 10px;
+    background-color: #42b72a;
+    height: 60px;
+    width: 250px;
+  }
+  
+  .a_line {
+    position: relative;
+    top: 40px;
+  }
+  
+  #a_line {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer {
+    width: 1030px;
+    height: 198px;
+    padding-left: 402px;
+    padding-right: 440px;
+    background-color: white;
+    margin: 0;
+  }
+  
+  #first_row {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
+    color: #737373;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  #second_row {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #737373;
+  }
+  
+  #third_row {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #737373;
+  }
+  
+  #forth_row {
+    width: 100%;
+    height: 10px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
+    color: #737373;
+    gap: 20px;
+  }
+  
+  #trademark {
+    font-size: 12px;
+    color: #737373;
+  }
