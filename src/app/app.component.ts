@@ -8,15 +8,12 @@ import { Item } from './models/item.model';
 })
 
 
-export class AppComponent implements OnInit{
+export class AppComponent{
   
-  title = 'A Store Sells Random Stuff';
+  title = 'AStoreSellsRandomStuff';
 
-  listItem: Item[] = [];
+  listItems: Item[] = [];
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log("Hello World");
-  }
 }
