@@ -1,133 +1,186 @@
+$color-button: rgb(179, 203, 248);
+
 body {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .form {
-    background-color: #15172b;
-    border-radius: 20px;
-    box-sizing: border-box;
-    height: 550px;
-    padding: 20px;
-    margin: auto;
-    width: 320px;
-  }
-  
-  .title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-container{
+  border:solid 2px rgb(0, 46, 99);
+  border-radius: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: auto;
+  width: 320px;
+
+  & > .title {
     color: #eee;
     font-family: sans-serif;
     font-size: 36px;
     font-weight: 600;
     margin-top: 30px;
   }
-  
-  .subtitle {
+
+  & > .subtitle {
     color: #eee;
     font-family: sans-serif;
     font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
   }
-  
-  .input-itemInfo {
-    height: 50px;
+
+  & > .input-itemInfo {
     position: relative;
     width: 100%;
-  }
-  
-  .name {
-    margin-top: 40px;
-  }
-  
-  .price {
-    margin-top: 30px;
-  }
 
-  .quan {
-    margin-top: 30px;
-  }
+    & > input {
+      height: 50px;
+    }
 
-  .desc {
-    margin-top: 30px;
+    & > textarea {
+      height: 100px;
+      resize: vertical;
+      max-height: 500px;
+    }
   }
-  
-  .form-control {
-    background-color: #303245;
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
-    font-size: 18px;
-    height: 100%;
-    outline: 0;
-    padding: 4px 20px 0;
-    width: 100%;
-  }
-  
-  .cut {
-    background-color: #15172b;
-    border-radius: 10px;
-    height: 20px;
-    left: 20px;
-    position: absolute;
-    top: -20px;
-    transform: translateY(0);
-    transition: transform 200ms;
-    width: 76px;
-  }
-  
-  .cut-short {
-    width: 50px;
-  }
-  
-  .form-control:focus ~ .cut,
-  .form-control:not(:placeholder-shown) ~ .cut {
-    transform: translateY(8px);
-  }
-  
-  .placeholder {
-    color: #65657b;
-    font-family: sans-serif;
-    left: 20px;
-    line-height: 14px;
-    pointer-events: none;
-    position: absolute;
-    transform-origin: 0 50%;
-    transition: transform 200ms, color 200ms;
-    top: 20px;
-  }
-  
-  .form-control:focus ~ .placeholder,
-  .form-control:not(:placeholder-shown) ~ .placeholder {
-    transform: translateY(-30px) translateX(10px) scale(0.75);
-  }
-  
-  .form-control:not(:placeholder-shown) ~ .placeholder {
-    color: #808097;
-  }
-  
-  .form-control:focus ~ .placeholder {
-    color: #dc2f55;
-  }
-  
-  .submit {
-    background-color: #08d;
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
-    cursor: pointer;
-    font-size: 18px;
-    height: 50px;
-    margin-top: 38px;
-    // outline: 0;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .submit:active {
+}
+
+.name {
+  margin-top: 40px;
+}
+
+.price {
+  margin-top: 30px;
+}
+
+.quan {
+  margin-top: 30px;
+}
+
+.desc {
+  margin-top: 30px;
+}
+
+.form-control {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.cut {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.form-control:focus ~ .cut,
+.form-control:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.form-control:focus ~ .placeholder,
+.form-control:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.form-control:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.form-control:focus ~ .placeholder {
+  color: #dc2f55;
+}
+
+.submit {
+  background-color: $color-button;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  // outline: 0;
+  text-align: center;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  &:hover {
     background-color: #06b;
+    filter: invert(1);
+    transition: all 0.5s ease-in-out;
   }
-  
+}
+
+.submit:active {
+  background-color: #06b;
+}
+
+.checkCart {
+  // position: relative;
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+  transition: all 0.2s ease-in-out;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &:hover {
+    cursor: pointer;
+    filter: invert(1);
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+// .cartIMG{
+// }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

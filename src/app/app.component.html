@@ -1,3 +1,15 @@
-<app-form [listItems]="listItems"></app-form>
-<app-b-cards></app-b-cards>
-```
+<div class="form-container">
+    <app-form [listItems]="listItems" (openCart)="showDialog()" (onNewItem)="addItem($event)"></app-form>
+</div>
+
+<div class="container">
+    <app-b-cards 
+    *ngFor="let item of listItems"
+    [item]="item"
+    (onCart) = "addCart(item)"
+    ></app-b-cards>
+</div>
+
+<dialog #cart class="dialog">
+    <app-cart [carts]="carts" (closeDialog)="close()"></app-cart>
+</dialog>

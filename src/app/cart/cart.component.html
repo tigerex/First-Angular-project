@@ -1,1 +1,17 @@
-<p>cart works!</p>
+<div >
+    <button class="close-button" (click)="close()">X</button>
+</div>
+<div *ngFor="let item of carts"> 
+    <div class="example-card">
+      <img class="img" src="{{item.url}}">
+        <div class="header">
+          <p class="name">{{item.name}}</p>
+          <p class="price">Price: ${{(item.price).toFixed(2)}}</p>
+          <p class="quantity_inStock">Quantity: {{item.quantity_inCart}}</p>
+          <!-- <p class="subtitle"> total: {{item.price*item.quantity_inStock}}</p> -->
+        </div>
+    </div>
+</div>
+<div >
+<p class="total">Total: ${{total().toFixed(2)}}</p>
+</div>

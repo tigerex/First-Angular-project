@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Item } from '../models/item.model';
-import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -8,20 +7,27 @@ import { CartService } from '../cart.service';
   templateUrl: './b-cards.component.html',
   styleUrls: ['./b-cards.component.scss']
 })
-export class BCardsComponent implements OnInit{
+export class BCardsComponent {
   @Input()
   item!: Item
   itemInCart: Item[] = [];
 
+  @Output() onCart = new EventEmitter();
+
+  activated() {
+    this.onCart.emit();
+    console.log('Your product has been added to the cart!');
+    console.log(this.item);
+  }
+
   constructor(
-    private route: ActivatedRoute,
     private cartService: CartService
   ) {}
 
-  ngOnInit(): void {}
 
-  addToCart(product: Item) {
-    this.cartService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+  addToCart() {
+    // this.onCart.emit();
+    // this.cartService.addToCart(product);
+    // window.alert('Your product has been added to the cart!');
   }
 }

@@ -1,27 +1,35 @@
-<form action="/action_page.php" (submit)="submit()">
+<div class="container">
+  <div>
+    <button class="checkCart" type="button" (click)="openDialog()">
+      <img src="https://static-00.iconduck.com/assets.00/shopping-trolley-emoji-512x512-ju7qcz5c.png" alt="cart">
+    </button>
+  </div>
+  <form class="form-container">
     <div class="form">
-        <div class="title">Welcome</div>
-        <div class="subtitle">Let's add some Item :D</div>
-        <div class="input-itemInfo name">
-          <input id="item_name" class="form-control" type="text" placeholder=" " [formControl]="name"/>
-          <div class="cut"></div>
-          <label for="item_name" class="placeholder">Item's name</label>
-        </div>
-        <div class="input-itemInfo price">
-          <input id="price" class="form-control" type="number" placeholder=" " [formControl]="price"/>
-          <div class="cut"></div>
-          <label for="price" class="placeholder">Item's price</label>
-        </div>
-        <div class="input-itemInfo quan">
-          <input id="quantity_inStock" class="form-control" type="number" placeholder=" " [formControl]="quantity_inStock"/>
-          <div class="cut"></div>
-          <label for="quantity_inStock" class="placeholder">Quantity instock</label>
-        </div>
-        <div class="input-itemInfo desc">
-            <textarea id="des" class="form-control" type="text" placeholder=" " [formControl]="description"></textarea>
-            <div class="cut cut-short"></div>
-            <label for="des" class="placeholder">Item's Description</label>
-          </div>
-          <button type="text" class="submit" (click)="submit()">submit</button>
-        </div>
-</form>
+      <div class="title">Welcome</div>
+      <div class="subtitle">Let's add some Item :D</div>
+      <div class="input-itemInfo name">
+        <input id="item_name" class="form-control" type="text" placeholder=" " [formControl]="name" />
+        <div class="cut"></div>
+        <label for="item_name" class="placeholder">Item's name</label>
+      </div>
+      <div class="input-itemInfo price">
+        <input id="price" class="form-control" type="number" placeholder=" " [formControl]="price" />
+        <div class="cut"></div>
+        <label for="price" class="placeholder">Item's price</label>
+      </div>
+      <div class="input-itemInfo quan">
+        <input id="quantity_inStock" class="form-control" type="number" placeholder=" "
+          [formControl]="quantity_inStock" />
+        <div class="cut"></div>
+        <label for="quantity_inStock" class="placeholder">Quantity instock</label>
+      </div>
+      <div class="input-itemInfo desc">
+        <textarea  id="des" class="form-control" type="text" placeholder=" " [formControl]="description"></textarea>
+        <div class="cut cut-short"></div>
+        <label for="des" class="placeholder">Item's Description</label>
+      </div>
+      <button (click)="submit()" type="text" class="submit">submit</button>
+    </div>
+  </form>
+</div>
