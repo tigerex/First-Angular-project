@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Item } from '../models/item.model';
-import { CartService } from '../cart.service';
+import { Item } from '../../models/item.model';
+import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'app-b-cards',

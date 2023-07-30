@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Item } from '../models/item.model';
+import { Item } from '../../models/item.model';
+import { CartService } from 'src/app/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +10,8 @@ import { Item } from '../models/item.model';
 export class CartComponent {
 @Input() carts!: Item[];
 @Output() closeDialog = new EventEmitter();
-@Output() totalCart = new EventEmitter();
+
+constructor(public cartService: CartService) { }
 
   close() {
     this.closeDialog.emit();
@@ -18,10 +20,14 @@ export class CartComponent {
   total() {
     let total = 0;
     for (let i = 0; i < this.carts.length; i++) {
-      total += this.carts[i].price;
+      let temp = this.carts[i].price * this.carts[i].quantity_inCart;
+      total += temp;
     }
     return total;
-    alert('Total: ' + total);
-    this.totalCart.emit();
+  }
+
+  deleteItem(item: Item){
+    this.cartService.deleteItem(item);
+    this.carts = this.cartService.getItems();
   }
 }
