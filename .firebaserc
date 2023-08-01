@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "my-first-project-ecf2b": {
+      "hosting": {
+        "test": [
+          "my-first-project-ecf2b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "my-first-project-ecf2b"
+  }
+}

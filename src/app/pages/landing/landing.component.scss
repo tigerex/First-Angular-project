@@ -1,0 +1,26 @@
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -100px;
+
+    &>button{
+        
+        height: 80px;
+        width: 30%;
+        border-radius: 20px;
+        border-color: white;
+        border: solid 3px;
+        font-size: 20px;
+
+        // filter: reverse(100%);
+
+        &:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            filter: invert(1);
+            transition: all 0.2s ease-in-out;
+        }
+    }
+}

@@ -12,7 +12,7 @@
             <button class="add" (click)="this.cartService.addItem(item)">+</button>
             <button class="remove" (click)="this.cartService.reduceItem(item)">-</button>
           </div>
-          <p class="price">Quantity In Store: ${{item.quantity_inStock}}</p>
+          <p class="price">Quantity In Store: {{item.quantity_inStock}}</p>
           <button class="delItem" (click)="deleteItem(item)">x</button>
           <!-- <p class="subtitle"> total: {{item.price*item.quantity_inStock}}</p> -->
         </div>

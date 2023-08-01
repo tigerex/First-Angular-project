@@ -2,18 +2,22 @@
 <ul class="menu">
     <li class="menu_list">
         <span class="front fas fa-home"></span>
-        <a href="#" class="side">home</a>
+        <a (click)="home()" class="side">Home</a>
     </li>
     <li class="menu_list">
         <span class="front fas fa-info"></span>
-        <a href="#" class="side">about</a>
+        <a (click)="info()" class="side">about</a>
     </li>
     <li class="menu_list">
         <span class="front fas fa-briefcase"></span>
-        <a href="#" class="side">projects</a>
+        <a (click)="showRoom()" class="side">Item</a>
     </li>
-    <li class="menu_list">
+    <li *ngIf="authService.user == null" class="menu_list">
         <span class="front fas fa-paper-plane"></span>
-        <a href="#" class="side">contact</a>
+        <a (click)="logIn()" class="side">LogIn</a>
+    </li>
+    <li *ngIf="authService.user != null" class="menu_list">
+        <span class="front fas fa-paper-plane"></span>
+        <a (click)="logOut()" class="side">logOut</a>
     </li>
 </ul>

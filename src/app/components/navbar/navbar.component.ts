@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 @Component({
@@ -8,6 +9,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  constructor(public router: Router){}
+  constructor(public router: Router,public authService:AuthenticationService){}
 
+  home(){
+    this.router.navigate(['/']);
+  }
+
+  showRoom(){
+    this.router.navigate(['/showroom']);
+  }
+
+  info(){
+
+  } 
+
+  logOut(){
+    this.authService.logout();
+  }
+  logIn(){
+    this.authService.login();
+  }
 }
+
+

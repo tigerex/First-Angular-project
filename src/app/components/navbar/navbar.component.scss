@@ -1,9 +1,13 @@
 * {
-    margin: 0;
+    margin: 2px;
     padding: 0;
     box-sizing: border-box;
     position: fixed;
+    z-index: 99;
+    border-radius: 20px;
+
 }
+
 ul.menu {
     display: inline-block;
     list-style-type: none;
@@ -30,12 +34,12 @@ a.side {
     cursor: pointer;
 }
 li.menu_list .front {
-    background-color: #34465d;
-    color: #FFFC00;
+    background-color: #15172b;
+    color: #ffffff;
     transform-origin: 0 0;
 }
 a.side {
-    background-color: #FFFC00;
+    background-color: #d4ff00;
     color: #34465d;
     transform-origin: 0 0 85px;
     transform: rotateY(-90deg);
@@ -46,3 +50,10 @@ li.menu_list:hover a.side {
 li.menu_list:hover .front {
     transform: rotateY(90deg);
 }
+
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+ 
+@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';

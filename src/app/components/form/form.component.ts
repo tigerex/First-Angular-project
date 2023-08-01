@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Item } from '../../models/item.model';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-form',
@@ -26,7 +28,8 @@ export class FormComponent implements OnInit {
     );
   }
 
-  constructor() {
+  constructor(public authService:AuthenticationService,
+    public dataService: DataService) {
     this.myForm.addControl('name', this.name);
     this.myForm.addControl('price', this.price);
     this.myForm.addControl('quantity', this.quantity_inStock);
@@ -50,13 +53,17 @@ export class FormComponent implements OnInit {
       let newItem: Item = {
         id: this.listItems.length + 1,
         name: this.name.value!,
-        price: this.price.value!,
-        quantity_inStock: this.quantity_inStock.value!,
+        price: this.price.value ?? 0,
+        quantity_inStock: this.quantity_inStock.value ?? 0,
         quantity_inCart: 1,
         description: this.description.value!,
-        url: 'https://picsum.photos/200/300?random='+this.listItems.length + 1,
+        url: 'https://picsum.photos/800/1000?random='+this.listItems.length + 1,
       };
       this.onNewItem.emit(newItem);
+      this.dataService.addItem(newItem);
+      alert('Item '+newItem.name+' added successfully!');
     }
+    this.myForm.reset();
   }
+
 }

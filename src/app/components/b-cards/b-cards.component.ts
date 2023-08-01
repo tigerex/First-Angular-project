@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Item } from '../../models/item.model';
-import { CartService } from '../../cart.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-b-cards',
@@ -9,25 +9,25 @@ import { CartService } from '../../cart.service';
 })
 export class BCardsComponent {
   @Input()
-  item!: Item
+  item!: Item;
   itemInCart: Item[] = [];
 
   @Output() onCart = new EventEmitter();
 
   activated() {
     this.onCart.emit();
+    // DataService.addItem(this.item);
     console.log('Your product has been added to the cart!');
     console.log(this.item);
   }
 
-  constructor(
-    private cartService: CartService
-  ) {}
+  constructor(private dataService: DataService) {}
 
-
-  addToCart() {
-    // this.onCart.emit();
-    // this.cartService.addToCart(product);
-    // window.alert('Your product has been added to the cart!');
+  delete(){
+    this.dataService.deleteItemWithID(this.item.id);
+  }
+  
+  do() {
+    alert('Your order has been confirmed!');
   }
 }

@@ -1,7 +1,8 @@
+<!-- <app-navbar></app-navbar>
+
 <div class="form-container">
     <app-form [listItems]="listItems" (openCart)="showDialog()" (onNewItem)="addItem($event)"></app-form>
 </div>
-
 <div class="container">
     <app-b-cards 
     *ngFor="let item of listItems"
@@ -14,4 +15,5 @@
     <app-cart [carts]="carts" (closeDialog)="close()"></app-cart>
 </dialog>
 
-<!-- <router-outlet></router-outlet> -->
+<app-text-carousel></app-text-carousel> -->
+<router-outlet></router-outlet>

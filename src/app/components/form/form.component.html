@@ -4,7 +4,7 @@
       <img src="https://static-00.iconduck.com/assets.00/shopping-trolley-emoji-512x512-ju7qcz5c.png" alt="cart">
     </button>
   </div>
-  <form class="form-container">
+  <form *ngIf="authService.user != null" class="form-container">
     <div class="form">
       <div class="title">Welcome</div>
       <div class="subtitle">Let's add some Item :D</div>

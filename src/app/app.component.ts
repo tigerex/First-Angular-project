@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild} from '@angular/core';
 import { Item } from './models/item.model';
 import { CartService } from './cart.service';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,10 @@ import { CartService } from './cart.service';
 
 
 export class AppComponent{
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private dataService: DataService
+    ) {}
   
   title = 'AStoreSellsRandomStuff';
   @ViewChild('cart') dialog: ElementRef<HTMLDialogElement> | undefined;  

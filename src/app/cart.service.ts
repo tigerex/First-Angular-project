@@ -29,7 +29,7 @@ export class CartService {
   addItem(item: Item) {
     let index = this.items.findIndex((card) => card.id === item.id);
     if (index !== -1) {
-      if(this.items[index].quantity_inStock === 0){ 
+      if(this.items[index].quantity_inStock <= 0){ 
         alert("No more for you!!");
       } else {
         this.items[index].quantity_inCart += 1;
@@ -45,7 +45,7 @@ export class CartService {
   reduceItem(item: Item) {
     let index = this.items.findIndex((card) => card.id === item.id);
     if (index !== -1) {
-      if(this.items[index].quantity_inCart === 1){
+      if(this.items[index].quantity_inCart < 1){
         this.items[index].quantity_inCart -= 1;
         this.items[index].quantity_inStock += 1;
         this.deleteItem(item);
@@ -60,7 +60,8 @@ export class CartService {
     for(let i = 0; i<this.items.length; i++){
       if(this.items[i].id === item.id){
         this.items.splice(i,1);
-        alert("Item Deleted");
+        alert("Item Deleted From Cart");
+        this.items[i].quantity_inStock += this.items[i].quantity_inCart;
       }
     }
     console.log(item);
