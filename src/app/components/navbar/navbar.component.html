@@ -1,23 +1,23 @@
 
 <ul class="menu">
     <li class="menu_list">
-        <span class="front fas fa-home"></span>
+        <span class="front fas fa-home" style="font-size: 30px;"></span>
         <a (click)="home()" class="side">Home</a>
     </li>
     <li class="menu_list">
-        <span class="front fas fa-info"></span>
-        <a (click)="info()" class="side">about</a>
+        <span class="front fas fa-paw" style="font-size: 30px;"></span>
+        <a (click)="info()" class="side">Nyan</a>
     </li>
     <li class="menu_list">
-        <span class="front fas fa-briefcase"></span>
+        <span class="front fas fa-shopping-basket" style="font-size: 30px;"></span>
         <a (click)="showRoom()" class="side">Item</a>
     </li>
-    <li *ngIf="authService.user == null" class="menu_list">
-        <span class="front fas fa-paper-plane"></span>
-        <a (click)="logIn()" class="side">LogIn</a>
+    <li *ngIf="authService.user == null" class="menu_list" style="font-size: 30px;">
+        <span class="front fas fa-sign-in"></span>
+        <a (click)="logIn()" class="side" style="font-size: 15px;">LogIn</a>
     </li>
-    <li *ngIf="authService.user != null" class="menu_list">
-        <span class="front fas fa-paper-plane"></span>
-        <a (click)="logOut()" class="side">logOut</a>
+    <li *ngIf="authService.user != null" class="menu_list" style="font-size: 30px;">
+        <span class="front fas fa-sign-out"></span>
+        <a (click)="logOut()" class="side" style="font-size: 15px;">logOut</a>
     </li>
 </ul>

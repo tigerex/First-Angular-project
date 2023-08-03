@@ -10,16 +10,20 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ShoppingComponent {
   listItems: Item[];
+  itemG : Item =<Item>{};
   constructor(
     private cartService: CartService,
-    private dataService: DataService
+    public dataService: DataService
     ) {
       this.listItems = this.dataService.listItems;
     }
     
     @ViewChild('cart') dialog: ElementRef<HTMLDialogElement> | undefined;  
+    @ViewChild('detail') detailDialog: ElementRef<HTMLDialogElement> | undefined;
+    @ViewChild('wow') outSideDialog: ElementRef<HTMLDialogElement> | undefined;
+
     carts: Item[] = [];
-    
+    item: Item[] = [];
     ngOnInit() {
       this.carts = this.cartService.getItems();
     }
@@ -46,5 +50,16 @@ export class ShoppingComponent {
 
   close() {
     this.dialog?.nativeElement.close();
+  }
+
+  showDetailDialog(item: Item) {
+    this.itemG = item;
+    console.log(this.itemG);
+    this.detailDialog?.nativeElement.showModal();
+    console.log('showDetailDialog activated');
+  }
+
+  closeDetailDialog() {
+    this.detailDialog?.nativeElement.close();
   }
 }

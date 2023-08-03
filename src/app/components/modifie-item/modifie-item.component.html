@@ -1,1 +1,33 @@
-<p>modifie-item works!</p>
+
+  <!-- flip-card-container -->
+<div class="box-container">
+  <button style="border-radius: 10px; margin-right: 5px;background-color: rgb(248, 250, 255);color: black;" mat-raised-button class="button" (click)="close()">Close</button>
+    <div class="flip-card-container" style="--hue: 220">
+      <div class="flip-card">
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{item.url}} alt="Random Img">
+            <figcaption style="border-radius: 10px;">{{item.name}}</figcaption>
+          </figure>
+          <ul *ngIf="authService.user != null">
+            <input class="modifieField" placeholder="{{item.name}}" [formControl]="name" />
+            <input class="modifieField" placeholder="Price: ${{(this.item.price || 0).toFixed(2)}}" [formControl]="price" />
+            <input class="modifieField" placeholder="In stock: {{item.quantity_inStock}}" [formControl]="quantity_inStock" />
+            <input class="modifieField" placeholder="Description: {{item.description}}" [formControl]="description" />
+            <input class="modifieField" placeholder="Image: {{item.url}}" [formControl]="url" />
+          </ul>
+          <ul *ngIf="authService.user == null">
+            <li>{{item.name}}</li>
+            <li>Price: ${{(this.item.price || 0).toFixed(2)}}</li>
+            <li>In stock: {{item.quantity_inStock}}</li>
+            <li>Description: {{item.description}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="buttonContainer" *ngIf="authService.user != null">
+        <button style="border-radius: 10px; margin-right: 5px;background-color: rgb(127, 161, 255);" mat-raised-button class="update" (click)="update()">Update Item!</button>
+        <button style="border-radius: 10px; margin-right: 5px;background-color: rgb(255, 127, 127);" mat-raised-button class="delete" (click)="deleteItem()">Delete This Item!</button>
+    </div>
+</div>

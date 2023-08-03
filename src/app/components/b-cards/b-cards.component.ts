@@ -8,11 +8,11 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./b-cards.component.scss']
 })
 export class BCardsComponent {
-  @Input()
-  item!: Item;
+  @Input() item!: Item;
   itemInCart: Item[] = [];
 
   @Output() onCart = new EventEmitter();
+  @Output() onDetail = new EventEmitter();
 
   activated() {
     this.onCart.emit();
@@ -28,6 +28,7 @@ export class BCardsComponent {
   }
   
   do() {
-    alert('Your order has been confirmed!');
+    this.onDetail.emit(this.item);
+    console.log("Iten "+this.item.name+" has been checked!");
   }
 }

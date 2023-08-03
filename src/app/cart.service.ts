@@ -45,7 +45,7 @@ export class CartService {
   reduceItem(item: Item) {
     let index = this.items.findIndex((card) => card.id === item.id);
     if (index !== -1) {
-      if(this.items[index].quantity_inCart < 1){
+      if(this.items[index].quantity_inCart === 1){
         this.items[index].quantity_inCart -= 1;
         this.items[index].quantity_inStock += 1;
         this.deleteItem(item);

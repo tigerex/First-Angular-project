@@ -80,7 +80,7 @@ export class DataService {
     collectionSnapshots(this.itemCollection).subscribe((snapshot)=>{
       let result = snapshot.map(doc => doc.data());
       this.listItems = result as Item[];
-      // console.log(this.listItems);
+      // console.log(snapshot);
     })
   }
 

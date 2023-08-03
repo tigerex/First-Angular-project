@@ -20,7 +20,7 @@ export class NavbarComponent {
   }
 
   info(){
-
+    this.router.navigate(['/catFacts']);
   } 
 
   logOut(){

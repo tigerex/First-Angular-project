@@ -5,12 +5,27 @@
 </div>
 <div class="container">
     <app-b-cards 
-    *ngFor="let item of listItems"
+    *ngFor="let item of this.dataService.listItems"
     [item]="item"
     (onCart) = "addCart(item)"
+    (onDetail) = "showDetailDialog($event)"
     ></app-b-cards>
 </div>
 
 <dialog #cart class="dialog">
     <app-cart [carts]="carts" (closeDialog)="close()"></app-cart>
+</dialog>
+
+
+<!-- <dialog #detail id="detailDialog">
+    <app-modifie-item 
+    *ngFor="let item of this.dataService.listItems" [item]="item" 
+    (closeDetailDialog)="close()"
+    ></app-modifie-item>
+</dialog> -->
+
+<dialog #detail class="detailDialog">
+    <div>
+        <app-modifie-item  [item]="itemG" (closeDetailDialog)="closeDetailDialog()"></app-modifie-item>
+    </div>
 </dialog>

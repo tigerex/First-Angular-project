@@ -1,0 +1,7 @@
+.catContainer{
+  margin-left: 150px;
+  width: 90%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}

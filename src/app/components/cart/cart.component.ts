@@ -9,6 +9,7 @@ import { CartService } from 'src/app/cart.service';
 })
 export class CartComponent {
 @Input() carts!: Item[];
+// @Input() item!: Item[];
 @Output() closeDialog = new EventEmitter();
 
 constructor(public cartService: CartService) { }

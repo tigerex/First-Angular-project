@@ -1,0 +1,6 @@
+<!-- <p>cat-facts works!</p> -->
+<app-navbar></app-navbar>
+<h1 style="color: white; font-size: 40px; text-transform:uppercase; text-align: center; margin-top: 50px;">Here we have some interesting facts about cat!</h1>
+<div  class="catContainer">
+  <app-cat-fact-card *ngFor="let fact of listFacts" [catFacts]="fact"></app-cat-fact-card>
+</div>

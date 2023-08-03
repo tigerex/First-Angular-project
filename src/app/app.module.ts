@@ -4,13 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { XyzComponent } from './components/xyz/xyz.component';
-// import { FormComponent } from './components/form/form.component';
-// import { BCardsComponent } from './components/b-cards/b-cards.component';
-// import { CartComponent } from './components/cart/cart.component';
-// import { NavbarComponent } from './components/navbar/navbar.component';
-// import { TextCarouselComponent } from './components/text-carousel/text-carousel.component';
-import { SharedModule } from './modules/shared/shared.module';
+
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
@@ -33,25 +27,15 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
-import { ModifieItemComponent } from './components/modifie-item/modifie-item.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    // XyzComponent,
-    // FormComponent,
-    // BCardsComponent,
-    // CartComponent,
-    // NavbarComponent,
-    AppComponent,
-    ModifieItemComponent,
-  ],
+    AppComponent,  ],
   imports: [
     BrowserModule,
+    HttpClientModule, //must be here!
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    SharedModule,
     MdbAccordionModule,
     MdbCarouselModule,
     MdbCheckboxModule,
@@ -67,7 +51,7 @@ import { ModifieItemComponent } from './components/modifie-item/modifie-item.com
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule,
+
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
