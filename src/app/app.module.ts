@@ -29,10 +29,12 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './modules/shared/shared.module';
+import { ChatBoxComponent } from './components/chat-box/chat-box.component';
 
 @NgModule({
   declarations: [
-    AppComponent,  ],
+    AppComponent,
+    ChatBoxComponent,  ],
   imports: [
     BrowserModule,
     HttpClientModule, //must be here!

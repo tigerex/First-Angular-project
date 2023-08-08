@@ -19,6 +19,10 @@ export class NavbarComponent {
     this.router.navigate(['/showroom']);
   }
 
+  contactUs(){
+    this.router.navigate(['/contact']);
+  }
+
   info(){
     this.router.navigate(['/catFacts']);
   } 

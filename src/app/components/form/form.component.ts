@@ -47,7 +47,7 @@ export class FormComponent implements OnInit {
       this.price.value == 0 ||
       this.quantity_inStock.value == 0 ||
       this.description.value == ''
-    ) {
+    ){
       alert('ERROR: One or more fields are empty or incorrect!');
     } else {
       let newItem: Item = {

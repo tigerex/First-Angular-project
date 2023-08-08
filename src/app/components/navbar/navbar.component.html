@@ -12,6 +12,10 @@
         <span class="front fas fa-shopping-basket" style="font-size: 30px;"></span>
         <a (click)="showRoom()" class="side">Item</a>
     </li>
+    <li class="menu_list">
+        <span class="front fas fa-comments" style="font-size: 30px;"></span>
+        <a (click)="contactUs()" class="side">Contact</a>
+    </li>
     <li *ngIf="authService.user == null" class="menu_list" style="font-size: 30px;">
         <span class="front fas fa-sign-in"></span>
         <a (click)="logIn()" class="side" style="font-size: 15px;">LogIn</a>
