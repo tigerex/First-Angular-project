@@ -26,6 +26,7 @@ export class ShoppingComponent {
     item: Item[] = [];
     ngOnInit() {
       this.carts = this.cartService.getItems();
+      this.listItems = this.dataService.listItems;
     }
 
   totalCart: any = 0;
@@ -54,7 +55,6 @@ export class ShoppingComponent {
 
   showDetailDialog(item: Item) {
     this.itemG = item;
-    console.log(this.itemG);
     this.detailDialog?.nativeElement.showModal();
     console.log('showDetailDialog activated');
   }

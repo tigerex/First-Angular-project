@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild} from '@angular/core';
 import { Item } from './models/item.model';
 import { CartService } from './cart.service';
 import { DataService } from './services/data.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,13 @@ import { DataService } from './services/data.service';
 export class AppComponent{
   constructor(
     private cartService: CartService,
-    private dataService: DataService
-    ) {}
+    private dataService: DataService,
+    public http: HttpClient,
+    ) {
+      this.http.get('http://localhost:6900/sum/6/9').subscribe((data: any) => {
+        console.log(data);
+      });
+    }
   
   title = 'AStoreSellsRandomStuff';
   @ViewChild('cart') dialog: ElementRef<HTMLDialogElement> | undefined;  
@@ -28,7 +34,7 @@ export class AppComponent{
 
   listItems: Item[] = [
     {
-      id: 1,
+      id: "1",
       name: 'Item 1',
       price:  9999,
       quantity_inStock: 10,
@@ -37,7 +43,7 @@ export class AppComponent{
       url: "https://picsum.photos/200/300?random=2",
     },
     {
-      id: 2,
+      id: "2",
       name: 'Item 2',
       price:  99,
       quantity_inStock: 100,
@@ -47,7 +53,7 @@ export class AppComponent{
 
     },
     {
-      id: 3,
+      id: "3",
       name: 'Item 3',
       price:  200,
       quantity_inCart: 1,
@@ -56,7 +62,7 @@ export class AppComponent{
       url: 'https://picsum.photos/200/300?random=3',
     },
     {
-      id: 4,
+      id: "4",
       name: 'Item 4',
       price:  12,
       quantity_inCart: 1,
@@ -65,7 +71,7 @@ export class AppComponent{
       url: 'https://picsum.photos/200/300?random=4',
     },
     {
-      id: 5,
+      id: "5",
       name: 'Item 5',
       price:  765,
       quantity_inCart: 1,

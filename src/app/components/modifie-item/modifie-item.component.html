@@ -1,7 +1,7 @@
 
   <!-- flip-card-container -->
 <div class="box-container">
-  <button style="border-radius: 10px; margin-right: 5px;background-color: rgb(248, 250, 255);color: black;" mat-raised-button class="button" (click)="close()">Close</button>
+  <button style="border-radius: 10px; margin-right: 5px;background-color: rgb(248, 250, 255);color: black;" mat-raised-button class="button" (click)="close();check()">Close</button>
     <div class="flip-card-container" style="--hue: 220">
       <div class="flip-card">
         <div class="card-front">
@@ -24,6 +24,7 @@
             <li>Description: {{item.description}}</li>
           </ul>
         </div>
+        
       </div>
     </div>
     <div class="buttonContainer" *ngIf="authService.user != null">

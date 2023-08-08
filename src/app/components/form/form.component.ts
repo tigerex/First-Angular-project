@@ -51,13 +51,13 @@ export class FormComponent implements OnInit {
       alert('ERROR: One or more fields are empty or incorrect!');
     } else {
       let newItem: Item = {
-        id: this.listItems.length + 1,
+        id: (this.dataService.listItems.length + 1).toString(),
         name: this.name.value!,
         price: this.price.value ?? 0,
         quantity_inStock: this.quantity_inStock.value ?? 0,
         quantity_inCart: 1,
         description: this.description.value!,
-        url: 'https://picsum.photos/800/1000?random='+this.listItems.length + 1,
+        url: 'https://picsum.photos/800/1000?random='+Math.random(),
       };
       this.onNewItem.emit(newItem);
       this.dataService.addItem(newItem);

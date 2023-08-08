@@ -17,11 +17,12 @@ export class ModifieItemComponent {
   @Output() closeDetailDialog = new EventEmitter();
 
   myForm: FormGroup = new FormGroup({});
-  name: FormControl<string | null> = new FormControl('');
-  price: FormControl<number | null> = new FormControl();
-  quantity_inStock: FormControl<number | null> = new FormControl();
-  description: FormControl<string | null> = new FormControl('');
-  url: FormControl<string | null> = new FormControl('');
+  id: FormControl<string | null> = new FormControl(this.item.id);
+  name: FormControl<string | null> = new FormControl(this.item.name);
+  price: FormControl<number | null> = new FormControl(this.item.price);
+  quantity_inStock: FormControl<number | null> = new FormControl(this.item.quantity_inStock);
+  description: FormControl<string | null> = new FormControl(this.item.description);
+  url: FormControl<string | null> = new FormControl(this.item.url);
 
   constructor(public dataService: DataService,public authService:AuthenticationService) { 
   }
@@ -30,8 +31,12 @@ export class ModifieItemComponent {
     this.closeDetailDialog.emit();
   }
 
+  check(){
+    console.log(this.item);
+  }
+
   update() {
-    if (this.name.value == '' || this.price.value == 0 || this.quantity_inStock.value == 0 || this.description.value == '') {
+    if (this.name.value == null && this.price.value == null && this.quantity_inStock.value == null && this.description.value == null && this.url.value == null) {
       alert('Nothing to update!');
     } else {
       let updateItem: Item = {
@@ -41,7 +46,7 @@ export class ModifieItemComponent {
         quantity_inStock: this.quantity_inStock.value ?? this.item.quantity_inStock,
         quantity_inCart: 1,
         description: this.description.value ?? this.item.description,
-        url: this.url.value??'https://picsum.photos/800/1000?random='+this.item.id,
+        url: this.url.value?? this.item.url,
       };
 
       this.dataService.updateItemWithID(this.item.id, updateItem);
@@ -51,9 +56,12 @@ export class ModifieItemComponent {
   }
 
   deleteItem() {
-    this.dataService.deleteItemWithID(this.item.id);
-    alert('Item '+this.item.name+' deleted successfully!');
-    this.myForm.reset();
-    this.closeDetailDialog.emit();
+    if(confirm('Are you sure to delete this item?')){
+      this.dataService.deleteItemWithID(this.item.id);
+      alert('Item '+this.item.name+' deleted successfully!');
+      this.myForm.reset();
+      this.closeDetailDialog.emit();
+    }else{
+      alert ('Item '+this.item.name+' not deleted!');}
   }
 }
